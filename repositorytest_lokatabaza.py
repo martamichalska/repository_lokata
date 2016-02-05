@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import repository
+import repository_lokaty
 import sqlite3
 import unittest
 
@@ -31,17 +31,17 @@ class RepositoryTest(unittest.TestCase):
 # przygotowanie danych
 
     def testGetByIdInstance(self):
-        klient = repository.KlientRepository().getById(1)
-        self.assertIsInstance(klient, repository.Klient, "Objekt nie jest klasy Klient")
+        klient = repository_lokaty.KlientRepository().getById(1)
+        self.assertIsInstance(klient, repository_lokaty.Klient, "Objekt nie jest klasy Klient")
 
 
     def testGetByIdLokatyLen(self):
-        self.assertEqual(len(repository.KlientRepository().getById(1).lokaty),
+        self.assertEqual(len(repository_lokaty.KlientRepository().getById(1).lokaty),
                 2, "Powinno wyjść 2")
 
 
     def testGetByIdInstanceasda(self):
-        klient = repository.KlientRepository().getById(1)
+        klient = repository_lokaty.KlientRepository().getById(1)
         self.assertEqual(klient.imie, "Krystyna", "Powinna być Krystyna")
 
 
